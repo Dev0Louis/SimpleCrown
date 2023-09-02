@@ -1,17 +1,15 @@
-package dev.louis.somecrowns;
+package dev.louis.simplecrown;
 
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
-import net.minecraft.screen.PlayerScreenHandler;
 
-public class SomeCrowns implements ModInitializer {
+public class SimpleCrown implements ModInitializer {
     /**
      * Runs the mod initializer.
      */
     @Override
     public void onInitialize() {
-        Items.register("somecrowns:crown", SomeCrownsItems.CROWN);
+        Items.register("simplecrown:crown", SimpleCrownItems.CROWN);
     }
 
 
@@ -19,6 +17,6 @@ public class SomeCrowns implements ModInitializer {
         return isCrown(item.getItem());
     }
     public static boolean isCrown(Item item) {
-        return item == SomeCrownsItems.CROWN;
+        return item == SimpleCrownItems.CROWN;
     }
 }

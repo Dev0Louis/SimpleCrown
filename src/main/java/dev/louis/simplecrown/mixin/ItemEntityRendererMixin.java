@@ -1,6 +1,6 @@
-package dev.louis.somecrowns.mixin;
+package dev.louis.simplecrown.mixin;
 
-import dev.louis.somecrowns.SomeCrowns;
+import dev.louis.simplecrown.SimpleCrown;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.ItemEntityRenderer;
@@ -21,13 +21,13 @@ public abstract class ItemEntityRendererMixin extends EntityRenderer<ItemEntity>
 
     @ModifyVariable(method = "render(Lnet/minecraft/entity/ItemEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V", at = @At(value = "STORE"), ordinal = 3)
     public float noRotationIfCrown(float value, ItemEntity entity) {
-        if(SomeCrowns.isCrown(entity.getStack()))return 0;
+        if(SimpleCrown.isCrown(entity.getStack()))return 0;
         return value;
     }
 
     @ModifyVariable(method = "render(Lnet/minecraft/entity/ItemEntity;FFLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V", at = @At(value = "STORE"), ordinal = 5)
     public float noRotationIfCrown2(float value, ItemEntity entity) {
-        if(SomeCrowns.isCrown(entity.getStack()))return 0;
+        if(SimpleCrown.isCrown(entity.getStack()))return 0;
         return value;
     }
 }

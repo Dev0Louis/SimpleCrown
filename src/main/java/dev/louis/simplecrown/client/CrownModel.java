@@ -1,11 +1,9 @@
-package dev.louis.somecrowns.client;
+package dev.louis.simplecrown.client;
 
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.entity.model.ShieldEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.Entity;
 
 // Made with Blockbench 4.8.1
 // Exported for Minecraft version 1.17+ for Yarn

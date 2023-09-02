@@ -1,26 +1,26 @@
 {
   "schemaVersion": 1,
-  "id": "somecrowns",
+  "id": "simplecrown",
   "version": "${version}",
-  "name": "SomeCrowns",
+  "name": "SimpleCrown",
   "description": "",
   "authors": [],
   "contact": {
-    "repo": "https://github.com/cxx34/SomeCrowns"
+    "repo": "https://github.com/cxx34/SimpleCrown"
   },
   "license": "MIT",
-  "icon": "assets/somecrowns/icon.png",
+  "icon": "assets/simplecrown/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
-      "dev.louis.somecrowns.client.SomeCrownsClient"
+      "dev.louis.simplecrown.client.SimpleCrownClient"
     ],
     "main": [
-      "dev.louis.somecrowns.SomeCrowns"
+      "dev.louis.simplecrown.SimpleCrown"
     ]
   },
   "mixins": [
-    "somecrowns.mixins.json"
+    "simplecrown.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
