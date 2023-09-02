@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.louis.somecrowns.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ItemEntityMixin"
+  ],
+  "client": [
+    "EntityRenderDispatcherMixin",
+    "ItemEntityRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
