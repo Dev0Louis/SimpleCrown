@@ -1,8 +1,10 @@
 package dev.louis.simplecrown.mixin;
 
+import dev.louis.simplecrown.SimpleCrown;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -18,8 +20,12 @@ public abstract class ItemEntityMixin extends Entity {
 
     @Shadow public abstract void setNeverDespawn();
 
+    @Shadow public abstract ItemStack getStack();
+
     @Inject(method = "<init>(Lnet/minecraft/entity/EntityType;Lnet/minecraft/world/World;)V", at = @At("RETURN"))
     public void crownIsPersistent(EntityType<?> entityType, World world, CallbackInfo ci) {
-        this.setNeverDespawn();
+        if (SimpleCrown.isCrown(this.getStack())) {
+            this.setNeverDespawn();
+        }
     }
 }

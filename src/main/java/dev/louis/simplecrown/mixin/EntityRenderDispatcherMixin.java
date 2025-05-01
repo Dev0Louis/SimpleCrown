@@ -16,6 +16,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class EntityRenderDispatcherMixin {
     @Inject(method = "renderShadow", at = @At("HEAD"), cancellable = true)
     private static void doNotRenderCrownShadow(MatrixStack matrices, VertexConsumerProvider vertexConsumers, Entity entity, float opacity, float tickDelta, WorldView world, float radius, CallbackInfo ci) {
-        if(entity instanceof ItemEntity itemEntity && SimpleCrown.isCrown(itemEntity.getStack()))ci.cancel();
+        if(entity instanceof ItemEntity itemEntity && SimpleCrown.isCrown(itemEntity.getStack())) ci.cancel();
     }
 }
